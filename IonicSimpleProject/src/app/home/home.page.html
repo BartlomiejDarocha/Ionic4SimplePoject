@@ -11,9 +11,27 @@
     To Seccond page
   </ion-button>
   <ion-button (click)="toSecondPageParam()">
-    To Seccond page2
+    To Seccond one param
   </ion-button>
   <ion-button (click)="toSecondPageParam2()">
-    To Seccond page3
+    To Seccond two param
   </ion-button>
+
+
+  <form [formGroup]="valiFirstGroup" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Imię</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <div>
+      <ng-container>
+        <div *ngIf="valiFirstGroup.get('username').hasError('required')">
+        <!-- <div *ngIf="(valiFirstGroup.get('username').dirty || valiFirstGroup.get('username').touched)"> -->
+          Blad pole wymaga albo cos zwaliles.
+        </div>
+      </ng-container>
+    </div>
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!valiFirstGroup.valid">Submit
+      data</ion-button>
+  </form>
 </ion-content>
