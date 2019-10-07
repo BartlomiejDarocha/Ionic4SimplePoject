@@ -14,7 +14,10 @@ export class HomePage implements OnInit {
   newNameArray = ['Bartek', 'Beta', 'Basia'];
 
   valiFirstGroup: FormGroup;
-  constructor(private router: Router, private testService: TestService, private formBuilder: FormBuilder) { }
+  constructor(
+    private router: Router,
+    private testService: TestService,
+    private formBuilder: FormBuilder) { }
   ngOnInit(): void {
     this.valiFirstGroup = this.formBuilder.group({
       username: new FormControl('', Validators.compose([
@@ -28,13 +31,13 @@ export class HomePage implements OnInit {
   toSecondPage() {
     this.router.navigate(['second-page']);
   }
-  toSecondPageParam() {
-    this.router.navigate(['second-page/' + this.param1]);
-  }
-  toSecondPageParam2() {
-    this.testService.pushTableTest(this.newNameArray);
-    this.router.navigate(['second-page/' + this.param1 + '/' + this.param2]);
-  }
+  // toSecondPageParam() {
+  //   this.router.navigate(['second-page/' + this.param1]);
+  // }
+  // toSecondPageParam2() {
+  //   this.testService.pushTableTest(this.newNameArray);
+  //   this.router.navigate(['second-page/' + this.param1 + '/' + this.param2]);
+  // }
   onSubmit() {
     console.log('validacja przeszła');
   }

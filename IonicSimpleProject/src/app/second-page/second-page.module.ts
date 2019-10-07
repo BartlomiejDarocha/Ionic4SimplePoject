@@ -6,20 +6,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SecondPagePage } from './second-page.page';
+import { SecondPageServiceService } from './second-page-service.service';
 
 const routes: Routes = [
   {
     path: '',
     component: SecondPagePage
   },
-  {
-    path: ':param1',
-    component: SecondPagePage
+  // {
+  //   path: ':param1',
+  //   component: SecondPagePage
+  // },
+  // {
+  //   path: ':param1/:param2',
+  //   component: SecondPagePage
+  // },
+  { path: 'test-page',
+    loadChildren: './test-page/test-page.module#TestPagePageModule'
   },
-  {
-    path: ':param1/:param2',
-    component: SecondPagePage
-  }
 ];
 
 @NgModule({
@@ -29,6 +33,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SecondPagePage]
+  declarations: [SecondPagePage],
+  providers: [SecondPageServiceService]
 })
 export class SecondPagePageModule {}
