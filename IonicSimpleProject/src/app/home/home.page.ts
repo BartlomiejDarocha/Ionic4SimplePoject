@@ -31,9 +31,9 @@ export class HomePage implements OnInit {
   toSecondPage() {
     this.router.navigate(['second-page']);
   }
-  // toSecondPageParam() {
-  //   this.router.navigate(['second-page/' + this.param1]);
-  // }
+  toSecondPageParam() {
+    this.router.navigate(['second-page/' + this.param1]);
+  }
   // toSecondPageParam2() {
   //   this.testService.pushTableTest(this.newNameArray);
   //   this.router.navigate(['second-page/' + this.param1 + '/' + this.param2]);

@@ -9,8 +9,8 @@ import { SecondPageServiceService } from './second-page-service.service';
   styleUrls: ['./second-page.page.scss'],
 })
 export class SecondPagePage implements OnInit {
-  // param1: any;
-  // param2: any;
+  param1: any;
+  param2: any;
   //names: Array<string>;
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,15 +20,18 @@ export class SecondPagePage implements OnInit {
     ) { }
 
   ngOnInit() {
-  //   this.param1 = this.activatedRoute.snapshot.paramMap.get('param1');
-  //   this.param2 = this.activatedRoute.snapshot.paramMap.get('param2');
-  //   this.testService.getNameTable().subscribe(data => {
-  //     this.names = data;
-  //   });
+    this.param1 = this.activatedRoute.snapshot.paramMap.get('param1');
+    this.param2 = this.activatedRoute.snapshot.paramMap.get('param2');
+
+
+
+    this.testService.getNameTable().subscribe(data => {
+      this.names = data;
+    });
   //   console.log(this.names, ' names');
   }
   setTest() {
-    this.secPageService.setTest(' to jest wielki test modulowosci ionic 4 dla noobow he he he');
+    this.secPageService.setTest(' to jest wielki test modulowosci ionic 4 dla noobow he he he he');
   }
   toTestStrony() {
     console.log('to nie bdzie dzialac');

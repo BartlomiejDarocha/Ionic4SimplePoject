@@ -2,14 +2,28 @@
   <ion-toolbar>
     <ion-title>secondPage</ion-title>
     <ion-buttons slot="start">
-        <ion-back-button defaultHref="home"></ion-back-button>
-      </ion-buttons>
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<p>  param1: {{param1}}</p>
-<p>  param2: {{param2}}</p>
-<ion-button (click)="toTestStrony()">Do testStorny</ion-button>
-<ion-button (click)="setTest()">nadaj nowy test</ion-button>
+  <p> param1: {{param1}}</p>
+  <p> param2: {{param2}}</p>
+  <form [formGroup]="form2" (ngSubmit)="onSubmit2()">
+    <ion-item>
+      <ion-label position="floating">Nickname</ion-label>
+      <ion-input type="text" formControlName="nickname"></ion-input>
+    </ion-item>
+    <div>
+      <ng-container *ngFor="let f2error of form2Erorrs.nickname">
+        <div *ngIf="form2.get('nickname').hasError(f2error.type) && (form2.get('nickname').dirty || form2.get('nickname').touched)">
+          <!-- <div *ngIf="form2.get('nickname').hasError('f2error.type') && (form2.get('nickname').dirty || form2.get('nickname').touched)"> -->
+         <ion-text [innerText]="f2error.message"></ion-text>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-button type="submit" [disabled]="!form2.valid">Submit</ion-button>
+  </form>
 </ion-content>
