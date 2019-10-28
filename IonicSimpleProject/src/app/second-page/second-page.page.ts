@@ -11,7 +11,7 @@ import { SecondPageServiceService } from './second-page-service.service';
 export class SecondPagePage implements OnInit {
   param1: any;
   param2: any;
-  //names: Array<string>;
+  names = [];
   constructor(
     private activatedRoute: ActivatedRoute,
     private testService: TestService,

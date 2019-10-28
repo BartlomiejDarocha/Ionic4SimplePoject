@@ -9,9 +9,10 @@ import { TestService } from './services/test.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SlideColumnDirective } from './directive/slide-column.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SlideColumnDirective],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule],
   providers: [

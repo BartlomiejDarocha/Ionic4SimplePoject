@@ -20,7 +20,7 @@ const routes: Routes = [
     path: ':param1/:param2',
     component: SecondPagePage
   },
-  { path: 'test-page',
+  { path: 'test-page/',
     loadChildren: './test-page/test-page.module#TestPagePageModule'
   },
 ];
